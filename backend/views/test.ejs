@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css' />
+    <link rel="stylesheet" href="skins/metro.css"/>
+    <script src="//cdn.webix.com/edge/webix.js"></script>
+    </head>
+  <body>
+  <p>Grid and other components can load and save data through a common REST protocol</p>
+  <div id='grid-container'></div>
+  <script>
+  
+  webix.i18n.parseFormat = "%c";
+  webix.i18n.setLocale();
+  
+  var toolbar = {
+    view:"toolbar",
+    cols:[
+      { view:"button", value:"Add Row", width:120, click:function(){
+        $$("grid").add({})
+      }},
+      { view:"button", value:"Delete Row", width:120, click:function(){
+        var rows = $$("grid").getSelectedId(true);
+        if (rows.length)
+          $$("grid").remove(rows);
+  
+      }},
+    ]
+  };
+  
+  var grid = {
+    view:"datatable", id:"grid", select:true,
+    autoheight:true, scroll:false,
+    editable:true,
+    columns:[
+      { id:"id", header:"ID Name", editor:"text"},
+      { id:"name", header:"Real Name", editor:"text"},
+      { id:"book", header:"Booking", css:"webix_el_button", width:100, template:"<a href='javascript:void(0)' class='check_flight'>Book now</a>"}
+    ],
+    url:"data",
+    save:"rest->data"
+  };
+  
+  webix.ui({
+    width:640, type:"space",
+    container:"grid-container",
+    rows:[
+      toolbar, grid
+    ]
+  });
+  </script>
+  
+  </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.6/css/dx.spa.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.6/css/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="https://cdn3.devexpress.com/jslib/17.2.6/css/dx.light.css" />
+    <script src="https://cdn3.devexpress.com/jslib/17.2.6/js/dx.all.js"></script>
+    <script src="/js/main-grid.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    
+
+</body>
+
+</html>

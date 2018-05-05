@@ -1,0 +1,21 @@
+.page {
+    background: #ffff66;
+    width: 100%;
+    overflow: hidden;
+}
+
+.leftcol {
+    float: left;
+    background: #ccff66;
+    width: 350px;
+    border-right: 1px solid #ff9900;
+}
+
+.rightcol {
+    padding-left: 350px;
+    background: #ccff66;
+}
+
+.rightcol .content {
+    background: #ffff66;
+}
