@@ -9,6 +9,10 @@ export default {
             {
                 url: '/employees',
                 text: 'Сотрудники'
+            },
+            {
+                url: '/firebase',
+                text: 'Firebase'
             }
         ]
     },

@@ -7,6 +7,7 @@ import Mainpage from "./components/mainpage";
 import Customers from "./components/customers";
 import Customer from "./components/customer";
 import Employees from "./components/employees";
+import Firebase from "./components/firebase";
 import E404 from "./components/E404";
 
 const routes = [
@@ -29,6 +30,11 @@ const routes = [
     name: 'employees',
     path: "/employees",
     component: Employees
+  },
+  {
+    name: 'firebase',
+    path: "/firebase",
+    component: Firebase
   },
   {
     path: "*",
