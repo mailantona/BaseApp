@@ -1,7 +1,6 @@
 <template>
     <div>
-        <router-link :to="{name: 'customers'}"> &#8592; <a>Обратно</a>
-        </router-link>
+        <router-link :to="{name: 'customers'}"> &#8592; <a>Обратно</a></router-link>
         <br>
 {{id}}
 
