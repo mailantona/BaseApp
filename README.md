@@ -24,7 +24,7 @@ npm start
 1. Copy Relative Path
 2. Vetur
 3. Color Picker
-4. vue-beautify
+4. wpy-beautify
 
 
 
