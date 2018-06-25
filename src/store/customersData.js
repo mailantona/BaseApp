@@ -1,15 +1,32 @@
+import Vue from 'vue';
+
 export default {
     namespaced: true,
     state: {
-        items: getCustomers()
+        items: []
     },
     getters: {
         items(state){
             return state.items
         }
+    },
+    mutations: {
+        loadCust(state, data){
+            state.items = data;
+        }
+    },
+    actions: {
+        loadCust(store){
+            Vue.http.get('Customers.json')
+                .then(response => response.json())
+                .then(data => {
+                        store.commit('loadCust', data);
+                    }
+                )
+        }
     }
 }
-
+/*
 function getCustomers(){
     return [
         {
@@ -31,4 +48,4 @@ function getCustomers(){
             Email: 'Vasiliy@gmail.com'
         }
     ]
-}
+}*/

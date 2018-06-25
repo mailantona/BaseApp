@@ -10,6 +10,8 @@ import Employees from "./components/employees";
 import Firebase from "./components/firebase";
 import E404 from "./components/E404";
 
+import {store} from "./store/store";
+
 const routes = [
   {
     name: 'mainpage',
@@ -19,7 +21,11 @@ const routes = [
   {
     name: 'customers',
     path: "/customers",
-    component: Customers
+    component: Customers,
+    beforeEnter (from, to, next){
+      store.dispatch('customersData/loadCust');
+      next();
+    }
   },
   {
     name: 'customer',

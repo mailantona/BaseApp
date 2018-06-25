@@ -8,6 +8,7 @@
     export default {
         
     }
+    console.log(1);
 </script>
 
 <style scoped>

@@ -15,11 +15,11 @@
                 <tr v-for="(item, index) in customersData" 
                     :key="index" 
                 >
-                    <th scope="row">{{item.id_customers}}</th>
-                    <td>{{item.fio}}</td>
-                    <td>{{item.Phone}}</td>
-                    <td>{{item.Email}}</td>
-                    <td><router-link :to="'/customers/'+ item.id_customers"><a>Изменить</a></router-link></td>
+                    <th scope="row">{{index}}</th>
+                    <td>{{item.URL}}</td>
+                    <td>{{item.author}}</td>
+                    <td>{{item.title}}</td>
+                    <td><router-link :to="'/customers/'+ index"><a>Изменить</a></router-link></td>
                 </tr>
             </tbody>
         </table>
