@@ -28,7 +28,8 @@ npm start
 
 
 knex?
-vue-8mp4 52:52
+vue-8mp4 45:48
+ggg
 
 
 
